@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title> Filtravel</title>
+</head>
+<body>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="filtravel.js"></script>
+	<div id="content">
+		<div fVal="div one">
+			<h2> Div one</h2>
+		</div>
+		<div fVal="div two">
+			<h2> Div two</h2>
+		</div>
+		<h1 fVal="This is a h1 tag that can by filtered">
+			This is a h1 tag that can by filtered.
+		</h1>
+		<div fVal="div three">
+			<h2> Div three</h2>
+		</div>
+		<p fVal="And this is a p tag that can by filtered">
+			And this is a p tag that can by filtered.
+		</p>
+	</div>
+
+<script>
+$('#content').filtravel();
+</script>
+</body>
+</html>
