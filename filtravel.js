@@ -13,14 +13,16 @@ $.fn.filtravel = function(options){
                     searchOn:"fVal",
                     inputFilterId:"_inputTextFiltravel",
                     byClass: false,
+					placeholder:"Type any text",
                     ignoreCase: true
                     }, options);
 
     var targetObj = this;
     
     function createInputFilter(){
-        var inputHTML = settings.filterString
-                    + '<input type="text" id="'+settings.inputFilterId+'" />';
+		var inputHTML = settings.filterString
+                    + '<input type="text" placeholder="'+settings.placeholder+'"'
+		            +   'id="'+settings.inputFilterId+'" />';
 
         targetObj.html(inputHTML + '<br />' + targetObj.html());
         // set the function used to match the texts
