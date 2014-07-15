@@ -46,17 +46,27 @@ $.fn.filtravel = function(options){
         return (regex.exec(elementText));
     }
     
+	function searchOnASpecificElement(element, text){
+    	var elementText = element.attr(settings.searchOn);
+		if (elementText){
+        	if (matchFunction(elementText, text)){
+            	element.show();
+            }else{
+                element.hide();
+            }
+        }
+	}
+
+
     function search(text, matchFunction){
         targetObj.children().each(function(){
-            var elementText = $(this).attr(settings.searchOn);
-            if (elementText){
-                if (matchFunction(elementText, text)){
-                    $(this).show();
-                }else{
-                    $(this).hide();
-                }
-            }
+			searchOnASpecificElement($(this));
         });
+		if (settings.byClass !== false){
+			$('.' + settings.byClass).each(function(){
+				searchOnASpecificElement($(this), text);
+			});
+		}
     }
     
     createInputFilter();
